@@ -7,7 +7,7 @@ class HomeDisplay extends React.Component {
         const { url, count } = this.props.bookmark
         return (
             <tr>
-                <td>{url}</td>
+                <td><a href={url} target="_blank">{url}</a></td>
                 <td>{count}</td>
             </tr>
         )

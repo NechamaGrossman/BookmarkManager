@@ -1,6 +1,5 @@
 ﻿import React from 'react';
 import axios from 'axios';
-
 const AccountContext = React.createContext();
 
 class AccountContextComponent extends React.Component {

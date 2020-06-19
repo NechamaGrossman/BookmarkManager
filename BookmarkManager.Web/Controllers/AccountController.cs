@@ -13,7 +13,7 @@ namespace BookmarkManager.Web.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AccountController : ControllerBase //OMG!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    public class AccountController : ControllerBase 
     {
         string _connectionString;
         public AccountController(IConfiguration configuration)
