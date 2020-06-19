@@ -9,10 +9,13 @@ namespace BookmarkManager.Data
     public class UserBookmarkRepository
     {
         string _connectionString;
+
         public UserBookmarkRepository(string connectionString)
         {
             _connectionString = connectionString;
         }
+
+        //Account repo
         public List<Bookmark> GetBookmarks()
         {
             using (var context = new UserBookmarkContext(_connectionString))
@@ -20,6 +23,7 @@ namespace BookmarkManager.Data
                 return context.Bookmarks.ToList();
             }
         }
+
         public void AddUser(User user, string password)
         {
             string hash = BCrypt.Net.BCrypt.HashPassword(password);
@@ -31,6 +35,7 @@ namespace BookmarkManager.Data
             }
 
         }
+
         public User Login(string email, string password)
         {
             var user = GetByEmail(email);
@@ -45,6 +50,7 @@ namespace BookmarkManager.Data
             }
             return null;
         }
+
         public User GetByEmail(string email)
         {
             using (var context = new UserBookmarkContext(_connectionString))
@@ -60,6 +66,9 @@ namespace BookmarkManager.Data
                 return isUsed;
             }
         }
+
+
+        //Bookmark repo
         public List<TopBookmark> GetTopBookMarkUrls()
         {
             using (var context = new UserBookmarkContext(_connectionString))
@@ -74,6 +83,7 @@ namespace BookmarkManager.Data
                     .ToList();
             }
         }
+
         public List<Bookmark> BookmarksForUser(string email)
         {
             using (var context = new UserBookmarkContext(_connectionString))

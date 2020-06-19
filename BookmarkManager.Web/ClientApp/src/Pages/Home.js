@@ -19,13 +19,11 @@ class Home extends React.Component {
                 <thead>
                     <tr>
                         <th>URL</th>
-                        <th>Number of Poeple with URL</th>
+                        <th>Amount of users that saved this URL</th>
                     </tr>
                 </thead>
                 <tbody>
-                        {this.state.bookmarks.map((b, key) => {
-                            return <HomeDisplay bookmark={b} key={key} />
-                        })}
+                        {this.state.bookmarks.map((b, key) => {  return <HomeDisplay bookmark={b} key={key} /> })}
                     </tbody>
             </table>
             </div>
